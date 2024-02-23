@@ -18,6 +18,7 @@ AwsS3.uploadFile(
   destDir: "", // The path to upload the file to (e.g. "uploads/public"). Defaults to the root "directory"
   filename: "x.png", //The filename to upload as
   metadata: {"test": "test"} // optional
+  endpointOverride: "https://another.s3.compatible.endpoint" // optional
 );
 ```
 
@@ -33,6 +34,7 @@ AwsS3.uploadUint8List(
   destDir: "", // The path to upload the file to (e.g. "uploads/public"). Defaults to the root "directory"
   filename: "x.png", //The filename to upload as
   metadata: {"test": "test"} // optional
+  endpointOverride: "https://another.s3.compatible.endpoint" // optional
 );
 ```
 
