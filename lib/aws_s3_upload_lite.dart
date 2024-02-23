@@ -40,6 +40,8 @@ class AwsS3 {
     /// The key to save this file as. Will override destDir and filename if set.
     String? key,
 
+    String? endpointHostOverride,
+
     /// Access control list enables you to manage access to bucket and objects
     /// For more information visit [https://docs.aws.amazon.com/AmazonS3/latest/userguide/acl-overview.html]
     ACL acl = ACL.public_read,
@@ -57,7 +59,7 @@ class AwsS3 {
     if (useSSL) {
       httpStr += 's';
     }
-    final endpoint = '$httpStr://$bucket.s3.$region.amazonaws.com';
+    final endpoint = '$httpStr://' + (endpointHostOverride ?? '$bucket.s3.$region.amazonaws.com');
 
     String? uploadKey;
 
@@ -167,6 +169,8 @@ class AwsS3 {
     /// The key to save this file as. Will override destDir and filename if set.
     String? key,
 
+    String? endpointHostOverride,
+
     /// Access control list enables you to manage access to bucket and objects
     /// For more information visit [https://docs.aws.amazon.com/AmazonS3/latest/userguide/acl-overview.html]
     ACL acl = ACL.public_read,
@@ -185,7 +189,7 @@ class AwsS3 {
       httpStr += 's';
     }
 
-    final endpoint = '$httpStr://$bucket.s3.$region.amazonaws.com';
+    final endpoint = '$httpStr://' + (endpointHostOverride ?? '$bucket.s3.$region.amazonaws.com');
 
     String? uploadKey;
 
